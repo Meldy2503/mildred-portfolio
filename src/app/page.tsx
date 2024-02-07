@@ -8,7 +8,7 @@ import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
-    <Box w="95%" maxW={'1200px'} m={' 1rem auto'}>
+     <Box w="95%" maxW={'1280px'} m={' 1rem auto'}> 
       <Navbar />
       <HeroSection />
       <AboutMe />
