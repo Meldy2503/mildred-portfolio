@@ -12,7 +12,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #e8e8e8;
+  /* background-color: #e8e8e8; */
   scroll-behavior: smooth;
   position: relative;
 }
@@ -30,4 +30,40 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
+.bg {
+  /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2),  rgb(255, 255, 255, 0.2)), url('./components/assets/img9.webp'); */
+  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4),  rgb(0, 0, 0, 0.4)), url('./components/assets/img0.webp'); */
+  /* background-image: linear-gradient(to bottom, rgba(255, 212, 125, 0.5),  rgb(255, 211, 125, 0.5)), url('./components/assets/img2.jpg'); */
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(135deg, #2325272b 0%, #27282bcc 100%), url('./components/assets/img0.webp');
+    opacity: 1;
+    transition: background-image 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.pulse {
+  transition: 0.25s;
+}
+
+.pulse:hover,
+.pulse:focus,
+.pulse:active {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 1em rgba(255, 255, 255, 0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #8c8c8e;
+  }
+}
+
+.pulse {
+  --color: #8c8c8e;
+  --hover: #8c8c8e;
+}
+
 

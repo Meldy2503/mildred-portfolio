@@ -5,16 +5,18 @@ import ContentCategories from "./components/content-categories";
 import Footer from "./components/footer";
 import HeroSection from "./components/landing-page";
 import Navbar from "./components/navbar";
+import Subscribe from "./components/subscribe";
 
 export default function Home() {
   return (
-     <Box w="95%" maxW={'1280px'} m={' 1rem auto'}> 
+     <> 
       <Navbar />
       <HeroSection />
       <AboutMe />
+      <Subscribe />
       <ContentCategories />
       <Contact />
       <Footer />
-    </Box>
+    </>
   );
 }
