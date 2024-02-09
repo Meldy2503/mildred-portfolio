@@ -30,6 +30,8 @@ export const BtnLink = ({ href, children }: Props) => {
         color="brand.100"
         letterSpacing={".1rem"}
         textTransform={"uppercase"}
+        borderRadius={'1rem'}
+
         // _hover={{
         //   textDecoration: "none",
         //   bg: colorMode === "dark" ? "yellow.500" : "orange.600",
@@ -47,17 +49,16 @@ export const Btn = ({ children, onClick, type, loading }: BtnProps) => {
     <Button
       className="pulse"
       textAlign="center"
-      fontSize="1.5rem"
+      fontSize="1.4rem"
       fontWeight={"600"}
-      borderRadius={"0px"}
       transition={"all .3s ease-in"}
       isLoading={loading}
-      px="3rem"
-      py="2.5rem"
+      borderRadius={'1rem'}
+      p="2.3rem"
       type={type}
       onClick={onClick}
       bg="brand.250"
-        color="brand.150"
+        color="brand.100"
       textTransform={"uppercase"}
       _hover={{
         textDecoration: "none",

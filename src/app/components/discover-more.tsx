@@ -4,7 +4,7 @@ import bgImg from "./assets/img2.jpg";
 import Image from "next/image";
 import { Btn } from "./utils/button";
 
-const Subscribe = () => {
+const DiscoverMore = () => {
   return (
     <Flex
       h="75vh"
@@ -32,4 +32,4 @@ const Subscribe = () => {
   );
 };
 
-export default Subscribe;
+export default DiscoverMore;

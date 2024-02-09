@@ -28,7 +28,7 @@ const ContentCategories = () => {
     {
       id: "3",
       icon: <TfiWrite />,
-      title: "Content Writing",
+      title: "Content Creation",
       text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Optiplaceat quas adipisci aliquam natus nobis nemo mollitia error.Blanditiis, fugiat.",
     },
   ];

@@ -5,7 +5,8 @@ import ContentCategories from "./components/content-categories";
 import Footer from "./components/footer";
 import HeroSection from "./components/landing-page";
 import Navbar from "./components/navbar";
-import Subscribe from "./components/subscribe";
+import DiscoverMore from "./components/discover-more";
+import WatchVideos from "./components/watch-videos";
 
 export default function Home() {
   return (
@@ -13,8 +14,9 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutMe />
-      <Subscribe />
+      <DiscoverMore />
       <ContentCategories />
+      <WatchVideos />
       <Contact />
       <Footer />
     </>
