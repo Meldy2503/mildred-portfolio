@@ -48,6 +48,7 @@ export const Btn = ({ children, onClick, type, loading }: BtnProps) => {
   return (
     <Button
       className="pulse"
+      zIndex={100}
       textAlign="center"
       fontSize="1.4rem"
       fontWeight={"600"}

@@ -43,7 +43,6 @@ const WatchVideos = () => {
               }}
             />{" "}
             <IoPlayCircleOutline
-              color="brand.100"
               style={{
                 position: "absolute",
                 top: "30%",
@@ -110,6 +109,7 @@ const WatchVideos = () => {
             direction={"column"}
              justify={'center'}
             align={"center"}
+            color='brand.350'
           >
              <Text color='brand.250' fontWeight={'bold'} mb='1rem'>
               SUBSCRIBE
@@ -119,7 +119,7 @@ const WatchVideos = () => {
               fontWeight={"500"}
               textAlign={"center"}
             >
-              Dont want to miss any latest updates?
+              Don't want to miss any latest updates?
             </Heading>
             <Text mt='2rem' mb='3rem'>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
