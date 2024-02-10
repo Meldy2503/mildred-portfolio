@@ -9,7 +9,7 @@ import bgImage from './assets/img1.webp'
 const LandingPage = () => {
   return (
     // <Flex h={"100vh"} bg="brand.100" align={'center'} justify={'center'} px='4rem'>
-    <Box h={"100vh"} bg="brand.100">
+    <Box h={"100vh"} bg="brand.100" id="home">
       <Flex
         justify={"space-between"}
         direction={{ base: "column", md: "row" }}

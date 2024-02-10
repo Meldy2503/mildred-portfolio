@@ -11,7 +11,7 @@ import star from './assets/Star.svg'
 import star2 from './assets/star5.svg'
 
 
-const ContentCategories = () => {
+const Services = () => {
   const data = [
     {
       id: "1",
@@ -35,7 +35,8 @@ const ContentCategories = () => {
 
   return (
     // <Flex h={"100vh"} bg="brand.100" align={'center'} justify={'center'} px='4rem'>
-    <Wrapper bg="brand.150">
+    <Wrapper bg="brand.150"         id='services'
+    >
       <Image src={star} alt='star image' height={800} width={800} style={{
               maxWidth: '100%',
               objectFit: 'cover',
@@ -94,4 +95,4 @@ const ContentCategories = () => {
   );
 };
 
-export default ContentCategories;
+export default Services;

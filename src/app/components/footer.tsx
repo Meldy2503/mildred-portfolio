@@ -1,5 +1,8 @@
-import { Box, Flex, Text, Heading, HStack } from "@chakra-ui/react";
+'use client'
+
+
 import React from "react";
+import { Box, Flex, Text, Heading, HStack } from "@chakra-ui/react";
 import Wrapper from "./utils/wrapper";
 import { FaPlay } from "react-icons/fa";
 

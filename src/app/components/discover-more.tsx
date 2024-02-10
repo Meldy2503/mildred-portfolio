@@ -1,3 +1,6 @@
+'use client'
+
+
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import React from "react";
 import bgImg from "./assets/img2.jpg";

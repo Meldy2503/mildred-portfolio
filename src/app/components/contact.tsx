@@ -1,6 +1,15 @@
-'use client'
+"use client";
 
-import { Box, Flex, Heading, Input, Spinner, Text, Textarea, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Input,
+  Spinner,
+  Text,
+  Textarea,
+  useColorMode,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 // import { Title } from "../utils/funcs";
 // import { useToast } from "@chakra-ui/react";
@@ -32,7 +41,6 @@ interface UserDetailsProps {
 }
 
 const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
-
   const contactData = [
     {
       icon: BsFillPersonFill,
@@ -143,62 +151,61 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
   loading && <Spinner />;
 
   return (
-    <Wrapper bg='brand.300'>
-    <Flex justify={'space-between'} gap='2rem' direction={{base: 'column', lg:'row'}}>
-      <Box      w={{ base: "100%", lg: "30%" }}
->
+    <Wrapper bg="brand.300"       id='contact'
+    >
+      <Flex
+        justify={"space-between"}
+        gap="2rem"
+        direction={{ base: "column", lg: "row" }}
+      >
+        <Box w={{ base: "100%", lg: "30%" }}>
+          <Heading fontSize={{ base: "3.5rem", sm: "4rem", xl: "5rem" }}>
+            I Would Love to Hear from You
+          </Heading>
+          <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
+          <Text mt="2rem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
+            facilis!
+          </Text>
+        </Box>
 
-      <Heading fontSize={{base: '3.5rem', sm: '4rem', xl: '5rem'}}>I Would Love to Hear from You</Heading>
-      <Box h='.5rem' bg='brand.250' borderRadius={'1rem'} mt='1rem'/>
-      <Text mt='2rem'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, facilis!</Text>
-      </Box>
+        <Box
+          px={{ base: "2rem", lg: "4rem" }}
+          py={"4rem"}
+          shadow={shadow}
+          bg={"brand.100"}
+          transition={"all .5s ease-in"}
+          w={{ base: "100%", lg: "65%" }}
+        >
+          <form onSubmit={handleFormSubmit}>
+            {contactData.map((item, index) => {
+              return (
+                <InputElement
+                  key={index}
+                  icon={item.icon}
+                  type={item.type}
+                  name={item.name}
+                  onChange={handleInputChange}
+                  as={item.type === "textarea" ? Textarea : Input}
+                  h={item.type === "textarea" ? "13rem" : ""}
+                  py={item.type === "textarea" ? "1.5rem" : "2.5rem"}
+                  mt={item.type === "textarea" ? "-8rem" : ""}
+                  placeholder={item.placeholder}
+                  bg={focusIndex === index ? "brand.250" : "brand.300"}
+                  color={focusIndex === index ? "brand.100" : "brand.150"}
+                  onClick={() => handleFocusColor(index)}
+                />
+              );
+            })}
 
-      <Box
-        px={{ base: "2rem", lg: "4rem" }}
-        py={'4rem'}
-        shadow={shadow}
-        bg={"brand.100"}
-        transition={"all .5s ease-in"}
-        w={{ base: "100%", lg: "65%" }}
-
-       >
-         <form onSubmit={handleFormSubmit}>
-          {contactData.map((item, index) => {
-            return (
-              <InputElement
-                key={index}
-                icon={item.icon}
-                type={item.type}
-                name={item.name}
-                onChange={handleInputChange}
-                 as={item.type === "textarea" ? Textarea : Input}
-                 h={item.type === "textarea" ? '13rem' : ''}
-                 py={item.type === "textarea" ? '1.5rem' : '2.5rem'}
-                 mt={item.type === "textarea" ? '-8rem' : ''}
-                placeholder={item.placeholder}
-                bg={
-                  focusIndex === index
-                      ? "brand.250"
-                      : "brand.300"
-                }
-                color={
-                  focusIndex === index
-                      ? "brand.100"
-                      : "brand.150"
-                }
-                onClick={() => handleFocusColor(index)}
-              />
-            );
-          })}
-
-          <Box mt="4rem">
-            <Btn loading={loading} type="submit">
-              send message
-            </Btn>
-          </Box>
-        </form>
-      </Box>
-    </Flex>
+            <Box mt="4rem">
+              <Btn loading={loading} type="submit">
+                send message
+              </Btn>
+            </Box>
+          </form>
+        </Box>
+      </Flex>
     </Wrapper>
   );
 };

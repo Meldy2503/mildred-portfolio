@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import AboutMe from "./components/about-me";
 import Contact from "./components/contact";
-import ContentCategories from "./components/content-categories";
+import Services from "./components/services";
 import Footer from "./components/footer";
 import HeroSection from "./components/landing-page";
 import Navbar from "./components/navbar";
@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <AboutMe />
       <DiscoverMore />
-      <ContentCategories />
+      <Services />
       <WatchVideos />
       <Contact />
       <Footer />
