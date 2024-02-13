@@ -26,7 +26,7 @@ const DiscoverMore = () => {
           ratione molestias officia ipsam modi suscipit dignissimos ut nesciunt,
           odio cupiditate.{" "}
         </Text>
-        <Btn>
+        <Btn ClassName="pulse-animate">
           Discover More
         </Btn>
 

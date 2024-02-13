@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Button } from "@chakra-ui/react";
+import { px } from "framer-motion";
+import { ClassNames } from "@emotion/react";
 
 interface Props {
   href: string;
@@ -12,6 +14,10 @@ interface BtnProps {
   type?: any;
   loading?: boolean;
   onClick?: () => void;
+  py?: string;
+  px?: string;
+  fontSize?: string;
+  ClassName?: string;
 }
 
 export const BtnLink = ({ href, children }: Props) => {
@@ -26,11 +32,12 @@ export const BtnLink = ({ href, children }: Props) => {
         px="1rem"
         py=".9rem"
         w="11rem"
-        bg="brand.250"
+        // bg="brand.250"
+
         color="brand.100"
         letterSpacing={".1rem"}
         textTransform={"uppercase"}
-        borderRadius={'1rem'}
+        borderRadius={'3rem'}
 
         // _hover={{
         //   textDecoration: "none",
@@ -43,19 +50,20 @@ export const BtnLink = ({ href, children }: Props) => {
     </Link>
   );
 };
-export const Btn = ({ children, onClick, type, loading }: BtnProps) => {
+export const Btn = ({ children, onClick, type, loading, py, px, fontSize, ClassName }: BtnProps) => {
 
   return (
     <Button
-      className="pulse"
+      className= {ClassName ?? "pulse"}
       zIndex={100}
       textAlign="center"
-      fontSize="1.4rem"
+      fontSize={fontSize ?? "1.3rem"}
       fontWeight={"600"}
       transition={"all .3s ease-in"}
       isLoading={loading}
-      borderRadius={'1rem'}
-      p="2.3rem"
+      borderRadius={'3rem'}
+      py={py ?? "2.3rem"}
+      px={px ?? "2.5rem"}
       type={type}
       onClick={onClick}
       bg="brand.250"

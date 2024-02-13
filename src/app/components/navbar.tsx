@@ -45,24 +45,25 @@ const Navbar = () => {
     },
   ];
   return (
-    <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'} bg='brand.100' zIndex={500}>
+    // <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'} zIndex={500}>
+     <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'} bg='brand.150' zIndex={500} > 
       <Flex
         w="95%"
         maxW={"1280px"}
         mx="auto"
         justify={"space-between"}
         align={"center"}
-        color="brand.150"
+        color="brand.100"
       >
         <HStack>
           <FaPlay
             style={{
               fontSize: "3.5rem",
-              color: "#ed4137",
+              color: "#ff5621",
               cursor: "pointer",
             }}
           />
-          <Text fontSize={{ base: "3rem", md: "3.5rem" }} fontWeight={"800"}>
+          <Text fontSize={{ base: "2.5rem", md: "3rem" }} fontWeight={"800"}>
             Mildred
           </Text>
         </HStack>
@@ -72,7 +73,7 @@ const Navbar = () => {
               <Box
                 key={link.id}
                 fontWeight={"600"}
-                color={currentMenu === link.id ? "brand.250" : "brand.150"}
+                color={currentMenu === link.id ? "brand.250" : "brand.100"}
                 onClick={() => {
                   handlecurrentMenu(link.id);
                 }}
@@ -92,20 +93,21 @@ const Navbar = () => {
       </Flex>
       <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
         <DrawerContent
-          mt="6.5rem"
+          mt="6rem"
           transition={"all .2s linear"}
           pb="3rem"
           pt="1rem"
+          bg='brand.150'
         >
           <DrawerBody>
-            <Flex direction="column" rowGap={"3rem"} align={"center"} mt="1rem">
+            <Flex direction="column" rowGap={"3rem"} align={"center"} mt="2rem" >
               {menuData.map((menu) => {
                 return (
                   <Box
                     fontWeight={"600"}
                     key={menu.id}
                     border="none"
-                    color={currentMenu === menu.id ? "brand.250" : "brand.150"}
+                    color={currentMenu === menu.id ? "brand.250" : "brand.100"}
                   >
                     <Link
                       href={menu.id}

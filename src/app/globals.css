@@ -33,19 +33,53 @@ a {
 
 
 .bg {
-  /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2),  rgb(255, 255, 255, 0.2)), url('./components/assets/img9.webp'); */
-  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4),  rgb(0, 0, 0, 0.4)), url('./components/assets/img0.webp'); */
-  /* background-image: linear-gradient(to bottom, rgba(255, 212, 125, 0.5),  rgb(255, 211, 125, 0.5)), url('./components/assets/img2.jpg'); */
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  background-image: linear-gradient(135deg, #2325272b 0%, #27282bcc 100%), url('./components/assets/img0.webp');
-    opacity: 1;
-    transition: background-image 0.3s, border-radius 0.3s, opacity 0.3s;
+  background-image: linear-gradient(to bottom, rgb(30, 36, 52, 0.6), rgba(30, 36, 52, 0.4)), url('./components/assets/img0.webp');
+  /* background-image: linear-gradient(0deg, rgb(30, 36, 52, 0.16) 0%, rgba(30, 36, 52, 0.8) 100%), url('./components/assets/img0.webp'); */
+   
+}
+.pattern {
+  background-position: center;
+  background-repeat: repeat;
+  background-image: linear-gradient(to bottom, rgb(30, 36, 52, 0.95), rgb(30, 36, 52, 0.95)), url('./components/assets/pattern.png');
+  /* background-image: linear-gradient(to bottom, rgb(255, 255, 255, 0.9), rgb(255, 255, 255, 0.88)), url('./components/assets/pattern.png'); */
+
+}
+
+
+
+.pulse-animate {
+  transition: 0.25s ;
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+  background: linear-gradient(150.31deg,#ff5621 14.03%,#ff2149 65.34%);
+}
+
+.pulse-animate:hover,
+.pulse-animate:focus,
+.pulse-animate:active {
+  animation: pulse-animate 1s;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3em rgba(255, 255, 255, 0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #8c8c8e;
+  }
+}
+
+.pulse-animate {
+  --color: #8c8c8e;
+  --hover: #8c8c8e;
 }
 
 .pulse {
   transition: 0.25s;
+  background: linear-gradient(150.31deg,#ff5621 14.03%,#ff2149 65.34%);
+
 }
 
 .pulse:hover,
@@ -66,4 +100,14 @@ a {
   --hover: #8c8c8e;
 }
 
+.img {
+  animation: animate 2s infinite ease alternate;
+  border-radius: 50%;
+  position: absolute;
+}
 
+@keyframes animate {
+  100% {
+    transform: translateY(-40px);
+  }
+}

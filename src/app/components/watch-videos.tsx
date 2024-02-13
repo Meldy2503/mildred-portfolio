@@ -20,7 +20,7 @@ const WatchVideos = () => {
   ];
 
   return (
-    <Wrapper>
+    <Wrapper id='videos'>
       <Flex gap="3rem" direction={{ base: "column", lg: "row" }}>
         <Box
           bg="brand.300"
@@ -50,7 +50,7 @@ const WatchVideos = () => {
                 right: "0px",
                 margin: "auto",
                 fontSize: isMobile ? "8rem" : "13rem",
-                color: "#f6f6f6",
+                color: "#fff",
                 cursor: "pointer",
               }}
             />
@@ -85,7 +85,9 @@ const WatchVideos = () => {
 
         >
           <Box
-            bg="brand.250"
+            // bg="brand.250"
+            bgGradient="linear(to-r, #ff5621 14.03%, #ff2149 65.34%)"
+
             borderRadius={"1rem"}
             h={{ base: "fit-content", lg: "40%" }}
             p="3rem"
@@ -121,7 +123,7 @@ const WatchVideos = () => {
             >
               Don't want to miss any latest updates?
             </Heading>
-            <Text mt='2rem' mb='3rem'>
+            <Text mt='2rem' mb='3rem' textAlign={'center'}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
               quis. Lorem ipsum, dolor sit amet consectetur 
             </Text>

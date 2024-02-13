@@ -43,7 +43,7 @@ const InputElement = ({
   const { colorMode } = useColorMode();
   return (
     <InputGroup
-      mb="2rem"
+      mb="3rem"
       >
         {/* <Flex> */}
       <InputLeftElement

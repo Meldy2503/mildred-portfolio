@@ -1,10 +1,15 @@
-'use client'
-
+"use client";
 
 import React from "react";
 import { Box, Flex, Text, Heading, HStack } from "@chakra-ui/react";
 import Wrapper from "./utils/wrapper";
-import { FaPlay } from "react-icons/fa";
+import {
+  FaPlay,
+  FaFacebookSquare,
+  FaFacebookF,
+  FaYoutube,
+} from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -14,34 +19,52 @@ const Footer = () => {
         py="4rem"
         justify={"space-between"}
         flexWrap={"wrap"}
-        gap="5rem"
+        columnGap="2rem"
+        rowGap="5rem"
         mx={"auto"}
-        align={'flex-start'}
+        align={"flex-start"}
       >
         <HStack>
           <FaPlay
             style={{
               fontSize: "4rem",
-              color: "#ed4137",
+
+               color: "#ff5621",
               cursor: "pointer",
             }}
           />
-          <Text color="brand.100" fontSize={"3rem"} fontWeight={'bold'}>
+          <Text color="brand.100" fontSize={"3rem"} fontWeight={"bold"}>
             Mildred
           </Text>
         </HStack>
-        <Flex direction={"column"} gap="2rem">
-          <Text>Home</Text>
-          <Text>About</Text>
-          <Text>Services</Text>
-        </Flex>
-        <Flex direction={"column"} gap="2rem">
-          <Text>Videos</Text>
-          <Text>contact</Text>
-        </Flex>
-        <Box w="33rem" mx={{ base: "auto", md: "0rem" }}>
+        {/* <Flex
+          w={{ base: "90%", sm: "40%", lg: "40%", xl: "40%" }}
+          justify={"space-between"}
+          gap="5rem"
+          mx={{ base: "auto", sm: "0" }}
+        > */}
+          <Flex direction={"column"} gap="2rem">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </Flex>
+          <Flex direction={"column"} gap="2rem">
+            <a href="#services">Services</a>
+            <a href="#videos">Discover More</a>
+          </Flex>
+          <Box>
+            <Text mb="1.5rem">Get in Touch</Text>
+            <Flex gap="2rem" fontSize={'2.2rem'}>
+              <FaFacebookSquare />
+              {/* <FaFacebookF /> */}
+              <FaYoutube />
+              <AiFillInstagram />
+            </Flex>
+          </Box>
+        {/* </Flex> */}
+        <Box w="33rem" mx={{ base: "auto", lg: "0rem" }}>
           <Heading
-            bg="brand.250"
+            bgGradient="linear(to-r, #ff5621 14.03%, #ff2149 65.34%)"
             textAlign={"center"}
             py="1.5rem"
             color="brand.100"
