@@ -16,19 +16,19 @@ const Services = () => {
       id: "1",
       icon: <RiAdvertisementLine />,
       title: "Promotional Ads",
-      text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Optiplaceat quas adipisci aliquam natus nobis nemo mollitia error.Blanditiis, fugiat.",
+      text: "Boost your brand with compelling ads that captivate your audience. Our creative solutions ensure maximum visibility and impact, helping your business stand out.",
     },
     {
       id: "2",
       icon: <FiEdit />,
       title: "Product Review",
-      text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Optiplaceat quas adipisci aliquam natus nobis nemo mollitia error.Blanditiis, fugiat.",
+      text: "We delve into the features and benefits of your products, providing authentic, unique and informative reviews that resonate with your target audience.",
     },
     {
       id: "3",
       icon: <TfiWrite />,
       title: "Content Creation",
-      text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Optiplaceat quas adipisci aliquam natus nobis nemo mollitia error.Blanditiis, fugiat.",
+      text: "Ignite your online presence with our dynamic services. From engaging articles to visually appealing multimedia contents, we tailor our creations to suit your brand.",
     },
   ];
 

@@ -5,14 +5,9 @@ import { Box, Button } from "@chakra-ui/react";
 import { px } from "framer-motion";
 import { ClassNames } from "@emotion/react";
 
-interface Props {
+interface BtnProps {
   href: string;
   children: React.ReactNode;
-}
-interface BtnProps {
-  children: React.ReactNode;
-  type?: any;
-  loading?: boolean;
   onClick?: () => void;
   py?: string;
   px?: string;
@@ -20,63 +15,38 @@ interface BtnProps {
   ClassName?: string;
 }
 
-export const BtnLink = ({ href, children }: Props) => {
-
+export const Btn = ({
+  children,
+  onClick,
+  py,
+  px,
+  fontSize,
+  ClassName,
+  href,
+}: BtnProps) => {
   return (
-    <Link href={href}>
-      <Box
-        className="pulse"
-        textAlign="center"
-        fontSize=".8rem"
-        fontWeight={"600"}
-        px="1rem"
-        py=".9rem"
-        w="11rem"
-        // bg="brand.250"
-
-        color="brand.100"
-        letterSpacing={".1rem"}
-        textTransform={"uppercase"}
-        borderRadius={'3rem'}
-
-        // _hover={{
-        //   textDecoration: "none",
-        //   bg: colorMode === "dark" ? "yellow.500" : "orange.600",
-        // }}
-        _active={{ transform: "translateY(1px)" }}
-      >
-        {children}
-      </Box>
-    </Link>
-  );
-};
-export const Btn = ({ children, onClick, type, loading, py, px, fontSize, ClassName }: BtnProps) => {
-
-  return (
-    <Button
-      className= {ClassName ?? "pulse"}
+    <Box
+      className={ClassName ?? "pulse"}
       zIndex={100}
       textAlign="center"
-      fontSize={fontSize ?? "1.3rem"}
+      fontSize={fontSize ?? "1.4rem"}
       fontWeight={"600"}
       transition={"all .3s ease-in"}
-      isLoading={loading}
-      borderRadius={'3rem'}
-      py={py ?? "2.3rem"}
-      px={px ?? "2.5rem"}
-      type={type}
+      borderRadius={"3rem"}
+      py={py ?? "1.3rem"}
+      px={px ?? "3rem"}
       onClick={onClick}
       bg="brand.250"
-        color="brand.100"
+      w='fit-content'
+      color="brand.100"
       textTransform={"uppercase"}
       _hover={{
         textDecoration: "none",
-        bg:"brand.250"
-    }}
+        bg: "brand.250",
+      }}
       _active={{ transform: "translateY(1px)" }}
     >
-      {children}
-    </Button>
+      <a href={href}>{children}</a>
+    </Box>
   );
 };
-

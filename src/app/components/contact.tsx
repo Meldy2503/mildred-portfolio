@@ -151,21 +151,20 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
   loading && <Spinner />;
 
   return (
-    <Wrapper bg="brand.300"       id='contact'
-    >
+    <Wrapper bg="brand.300" id="contact">
       <Flex
         justify={"space-between"}
         gap="2rem"
         direction={{ base: "column", lg: "row" }}
       >
         <Box w={{ base: "100%", lg: "30%" }}>
-          <Heading fontSize={{ base: "3.5rem", sm: "4rem", xl: "5rem" }}>
+          <Heading fontSize={{ base: "4rem", md: "5rem" }}>
             I Would Love to Hear from You
           </Heading>
           <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
           <Text mt="2rem">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-            facilis!
+            I value your feedback and inquiries. Whether you have questions,
+            suggestions, or just want to say hello, i'm here to listen and I look forward to connecting with you.
           </Text>
         </Box>
 

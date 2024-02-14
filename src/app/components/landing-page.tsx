@@ -1,7 +1,15 @@
 "use client";
 
 import React from "react";
-import { Box, Text, Flex, Heading, Icon, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Flex,
+  Heading,
+  Icon,
+  Divider,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import bgImage from "./assets/hero-img1.svg";
 import { Btn } from "./utils/button";
@@ -18,15 +26,18 @@ import {
 import { subscribe } from "diagnostics_channel";
 
 const LandingPage = () => {
+  const [isMobile] = useMediaQuery("(max-width: 374px)");
+
   const data = [
     {
       icon: <FaYoutube />,
       iconColor: "#ff2149",
       title: "YouTube",
-      text: "Please subscribe to my official channel for updated content.",
+      text: "Please subscribe to my official channel for updated contents.",
       subscribersNo: "5K+",
       subText: "SubScribers",
       btnText: "SubScribe",
+      href: 'https://www.youtube.com/@mildredken7981'
     },
     {
       icon: <AiFillInstagram />,
@@ -36,19 +47,12 @@ const LandingPage = () => {
       subscribersNo: "1K+",
       subText: "Followers",
       btnText: "Follow",
+      href: '#'
     },
   ];
 
-
   return (
-    <Box
-      id="home"
-      pt="10rem"
-      pb= "8rem"
-      className="pattern"
-      color="brand.100"
-      overflow={"hidden"}
-    >
+    <Box id="home" pt="8rem" pb="5rem" className="pattern" color="brand.100">
       <Flex
         justify={"space-between"}
         direction={{ base: "column", xl: "row" }}
@@ -57,12 +61,12 @@ const LandingPage = () => {
         mx="auto"
         w="95%"
         rowGap={{ base: "0rem", xl: "5rem" }}
-         mt="2rem"
+        mt="2rem"
       >
         <Flex
           align={{ base: "center", xl: "flex-start" }}
           // justify={{ base: "center", xl: "flex-start" }}
-          w={{ base: "100%", xl: "30%" }}
+          w={{ base: "100%", xl: "34%" }}
           direction={"column"}
           mt={{ base: "3rem", xl: "0rem" }}
           textAlign={{ base: "center", xl: "left" }}
@@ -71,7 +75,7 @@ const LandingPage = () => {
           <Text
             color="brand.250"
             fontSize={"1.4rem"}
-            fontWeight={"600"}
+            fontWeight={"700"}
             letterSpacing={".2rem"}
           >
             WELCOME TO MY PAGE
@@ -79,19 +83,19 @@ const LandingPage = () => {
           <Heading
             fontSize={{ base: "4rem", md: "5rem" }}
             py="1.5rem"
-            w={{ base: "100%", sm: "80%", lg: "100%" }}
+            w={{ base: "100%", sm: "85%", md: "70%", xl: "100%" }}
           >
-            Ensuring the Best Viewing Experience
+           Elevate your Entertainment Journey
           </Heading>
           <Text
             pb="2.5rem"
             color="brand.400"
-            w={{ base: "95%", sm: "70%", lg: "100%" }}
+            w={{ base: "95%", sm: "70%", md: "60%", xl: "100%" }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-            vel quod cum necessitatibus autem aliquid, impedit eligendi?
+            Explore a world where every detail comes to life,
+            captivating your senses and redefining your viewing experience.
           </Text>
-          <Btn>Discover More</Btn>
+          <Btn href='https://www.youtube.com/@mildredken7981'>Discover More</Btn>
         </Flex>
         <Flex
           w={{ base: "100%", xl: "75%" }}
@@ -99,7 +103,7 @@ const LandingPage = () => {
           align={{ base: "center", xl: "flex-start" }}
         >
           <Flex
-            w={{ base: "100%", xl: "50%" }}
+            w={{ base: "100%", xl: "55%" }}
             mt={{ base: "0rem", xl: "5rem" }}
             h="50rem"
             position={"relative"}
@@ -110,7 +114,7 @@ const LandingPage = () => {
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.7}>
+              <Sphere args={[1, 100, 200]} scale={2.5}>
                 <MeshDistortMaterial
                   // attach={"material"}
                   distort={0.5}
@@ -120,14 +124,14 @@ const LandingPage = () => {
                 />
               </Sphere>
             </Canvas>
-            <Box position={"absolute"} top="5rem" mx="auto">
+            <Box position={"absolute"} top="2rem" mx="auto">
               <Image
                 src={bgImage}
                 alt="youtube photo"
                 width={800}
                 height={800}
                 style={{
-                  width: "38rem",
+                  width: "35rem",
                   maxWidth: "100%",
                   objectFit: "cover",
                 }}
@@ -136,7 +140,7 @@ const LandingPage = () => {
           </Flex>
           {/* </Box> */}
           <Flex
-            w={{ base: "100%", xl: "50%" }}
+            w={{ base: "100%", xl: "45%" }}
             direction={"column"}
             gap="3rem"
             mt={{ base: "0rem", xl: "9rem" }}
@@ -148,12 +152,14 @@ const LandingPage = () => {
                   bg="brand.100"
                   py="2rem"
                   px="1rem"
-                  gap="1rem"
+                  gap={isMobile ? "1rem" : ".5rem"}
                   shadow={"xl"}
                   borderRadius={"1rem"}
+                  direction={isMobile ? "column" : "row"}
                   key={index}
+                  align="center"
                 >
-                  <Flex gap="1rem" w="70%">
+                  <Flex gap="1rem" w={isMobile ? "100%" : "70%"}>
                     <Box
                       style={{
                         cursor: "pointer",
@@ -176,7 +182,10 @@ const LandingPage = () => {
                         {item.text}
                       </Text>
                     </Box>
-                    <Divider orientation="vertical" mx="1rem" />
+                    <Divider
+                      orientation="vertical"
+                      mx={isMobile ? "0rem" : "1rem"}
+                    />
                   </Flex>
                   <Box>
                     <Heading
@@ -199,7 +208,7 @@ const LandingPage = () => {
                       <br />
                       {item.subText}
                     </Heading>
-                    <Btn fontSize="1.1rem" py="1.6rem" px="2rem">
+                    <Btn href={item.href} fontSize="1.1rem" py="1rem" px="2rem">
                       {item.btnText}
                     </Btn>
                   </Box>

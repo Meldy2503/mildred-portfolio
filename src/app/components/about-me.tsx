@@ -15,7 +15,7 @@ const AboutSection = () => {
         justify={"space-between"}
         align={"center"}
         gap="2rem"
-        direction={{ base: "column-reverse", lg: "row" }}
+        direction={{ base: "column", lg: "row-reverse" }}
       >
         <Box w={{ base: "100%", lg: "50%" }} position={"relative"} zIndex={'100'}>
           <Image
@@ -59,7 +59,7 @@ const AboutSection = () => {
           <Text
             color="brand.250"
             fontSize={"1.4rem"}
-            fontWeight={"600"}
+            fontWeight={"700"}
             letterSpacing={".2rem"}
           >
             ABOUT ME

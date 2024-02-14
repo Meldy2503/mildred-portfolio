@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Box,
@@ -25,6 +25,21 @@ const Navbar = () => {
     setCurrentMenu(link);
   };
 
+  const [scrolled, setScrolled] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const menuData = [
     {
       name: "Home",
@@ -46,7 +61,8 @@ const Navbar = () => {
   ];
   return (
     // <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'} zIndex={500}>
-     <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'} bg='brand.150' zIndex={500} > 
+     <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'}        bg={scrolled ? "brand.150" : "transparent"}
+     zIndex={500} > 
       <Flex
         w="95%"
         maxW={"1280px"}

@@ -17,23 +17,23 @@ const Footer = () => {
       <Flex
         color="brand.400"
         py="4rem"
-        justify={"space-between"}
+        justify='space-between'
         flexWrap={"wrap"}
-        columnGap="2rem"
+        columnGap="3rem"
         rowGap="5rem"
         mx={"auto"}
         align={"flex-start"}
       >
+       
+
         <HStack>
           <FaPlay
             style={{
-              fontSize: "4rem",
-
-               color: "#ff5621",
-              cursor: "pointer",
+              fontSize: "3.5rem",
+              color: "#ff5621",
             }}
           />
-          <Text color="brand.100" fontSize={"3rem"} fontWeight={"bold"}>
+          <Text fontSize={{ base: "2.5rem", md: "3rem" }} color="brand.100" fontWeight={"800"}>
             Mildred
           </Text>
         </HStack>

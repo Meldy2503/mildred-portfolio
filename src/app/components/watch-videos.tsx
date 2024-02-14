@@ -20,13 +20,13 @@ const WatchVideos = () => {
   ];
 
   return (
-    <Wrapper id='videos'>
+    <Wrapper id="videos">
       <Flex gap="3rem" direction={{ base: "column", lg: "row" }}>
         <Box
           bg="brand.300"
           borderRadius={"1rem"}
           p={{ base: "1rem", md: "2rem" }}
-          w={{base: '100%', lg: '65%'}}
+          w={{ base: "100%", lg: "65%" }}
         >
           <Box position={"relative"}>
             <Image
@@ -42,6 +42,7 @@ const WatchVideos = () => {
                 margin: "auto",
               }}
             />{" "}
+            <a href="https://www.youtube.com/watch?v=XNjBiqe5RcI&t=8s">
             <IoPlayCircleOutline
               style={{
                 position: "absolute",
@@ -54,21 +55,21 @@ const WatchVideos = () => {
                 cursor: "pointer",
               }}
             />
+            </a>
           </Box>
           <Box
             px={{ base: "0rem", md: "1rem" }}
             mt={{ base: "2rem", md: "3rem" }}
           >
             <Heading fontSize={"3rem"} fontWeight={"500"}>
-              Lorem ipsum dolor sit amet.
+              Explore Exciting and Funny Contents
             </Heading>
 
             <Text mt="1.5rem" mb="2rem">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga at
-              odio natus corporis corrupti quos impedit sint perspiciatis
-              accusamus quibusdam.
+            Dive into a world of captivating experiences. Immerse yourself in a realm where every moment is a story waiting
+              to be told.
             </Text>
-            <Btn>
+            <Btn href='https://www.youtube.com/@mildredken7981'>
               <Flex align={"center"} gap=".5rem">
                 <Text>Watch More</Text>
                 <IoIosArrowRoundForward fontSize={"2.5rem"} />
@@ -81,13 +82,11 @@ const WatchVideos = () => {
           gap="2rem"
           justify={"space-between"}
           color="brand.100"
-          w={{base: '100%', lg: '30%'}}
-
+          w={{ base: "100%", lg: "30%" }}
         >
           <Box
             // bg="brand.250"
             bgGradient="linear(to-r, #ff5621 14.03%, #ff2149 65.34%)"
-
             borderRadius={"1rem"}
             h={{ base: "fit-content", lg: "40%" }}
             p="3rem"
@@ -109,25 +108,22 @@ const WatchVideos = () => {
             borderRadius={"1rem"}
             p="3rem"
             direction={"column"}
-             justify={'center'}
+            justify={"center"}
             align={"center"}
-            color='brand.350'
+            color="brand.350"
           >
-             <Text color='brand.250' fontWeight={'bold'} mb='1rem'>
+            <Text color="brand.250" fontWeight={"bold"} mb="1rem">
               SUBSCRIBE
             </Text>
-            <Heading
-              fontSize={"3rem"}
-              fontWeight={"500"}
-              textAlign={"center"}
-            >
-              Don't want to miss any latest updates?
+            <Heading fontSize={"3rem"} fontWeight={"500"} textAlign={"center"}>
+              Don't want to miss any updates?
             </Heading>
-            <Text mt='2rem' mb='3rem' textAlign={'center'}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
-              quis. Lorem ipsum, dolor sit amet consectetur 
+            <Text mt="2rem" mb="3rem" textAlign={"center"}>
+              Stay ahead of the curve with latest updates. Whether it's
+              groundbreaking innovations, funny videos or insightful contents, I
+              will ensure you're always in the loop.
             </Text>
-            <Btn>Subscribe Now</Btn>
+            <Btn href='https://www.youtube.com/@mildredken7981'>Subscribe Now</Btn>
           </Flex>
         </Flex>
       </Flex>
