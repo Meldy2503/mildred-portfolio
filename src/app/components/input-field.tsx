@@ -1,14 +1,10 @@
-'use client'
+"use client";
 
-
-import React from "react";
 import {
-    Flex,
   Icon,
   Input,
   InputGroup,
-  InputLeftElement,
-  useColorMode,
+  InputLeftElement
 } from "@chakra-ui/react";
 
 interface Props {
@@ -38,35 +34,29 @@ const InputElement = ({
   as,
   h,
   mt,
-  py
+  py,
 }: Props) => {
-  const { colorMode } = useColorMode();
   return (
-    <InputGroup
-      mb="3rem"
-      >
-        {/* <Flex> */}
+    <InputGroup mb="3rem">
       <InputLeftElement
         pointerEvents="none"
         h="full"
         p=" 2rem"
-        fontSize={'1.8rem'}
+        fontSize={"1.8rem"}
         bg={bg}
         color={color}
-
-        >
-        <Icon as={icon} mt={mt}/>
+      >
+        <Icon as={icon} mt={mt} />
       </InputLeftElement>
       <Input
         as={as}
-        // bg={colorMode === "dark" ? "brand.700" : "brand.250"}
-        border='1px solid #d8d8d8'
+        border="1px solid #d8d8d8"
         placeholder={placeholder}
         name={name}
         _placeholder={{ color: "brand.200", fontSize: "1.5rem", mt: "-2rem" }}
         size="lg"
         type={type}
-        fontSize={'1.6rem'}
+        fontSize={"1.6rem"}
         h={h}
         required
         focusBorderColor="brand.350"
@@ -75,7 +65,6 @@ const InputElement = ({
         onChange={onChange}
         onClick={onClick}
       />
-      {/* </Flex> */}
     </InputGroup>
   );
 };

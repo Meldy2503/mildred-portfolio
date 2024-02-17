@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Box,
@@ -11,12 +11,13 @@ import {
   HStack,
   Icon,
   Text,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { menuData } from "./utils/constants";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -26,7 +27,6 @@ const Navbar = () => {
   };
 
   const [scrolled, setScrolled] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,29 +40,15 @@ const Navbar = () => {
     };
   }, []);
 
-  const menuData = [
-    {
-      name: "Home",
-      id: "#home",
-    },
-    {
-      name: "About me",
-      id: "#about",
-    },
-    {
-      name: "Services",
-      id: "#services",
-    },
-
-    {
-      name: "Contact me",
-      id: "#contact",
-    },
-  ];
   return (
-    // <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'} zIndex={500}>
-     <Box w="100%" py="1.2rem" position={'fixed'} top={'0px'}        bg={scrolled ? "brand.150" : "transparent"}
-     zIndex={500} > 
+    <Box
+      w="100%"
+      py="1.5rem"
+      position={"fixed"}
+      top={"0px"}
+      bg={scrolled ? "brand.150" : "transparent"}
+      zIndex={500}
+    >
       <Flex
         w="95%"
         maxW={"1280px"}
@@ -74,12 +60,12 @@ const Navbar = () => {
         <HStack>
           <FaPlay
             style={{
-              fontSize: "3.5rem",
+              fontSize: "3rem",
               color: "#ff5621",
               cursor: "pointer",
             }}
           />
-          <Text fontSize={{ base: "2.5rem", md: "3rem" }} fontWeight={"800"}>
+          <Text fontSize={{ base: "2rem", md: "2.5rem" }} fontWeight={"800"}>
             Mildred
           </Text>
         </HStack>
@@ -88,7 +74,6 @@ const Navbar = () => {
             return (
               <Box
                 key={link.id}
-                fontWeight={"600"}
                 color={currentMenu === link.id ? "brand.250" : "brand.100"}
                 onClick={() => {
                   handlecurrentMenu(link.id);
@@ -113,14 +98,13 @@ const Navbar = () => {
           transition={"all .2s linear"}
           pb="3rem"
           pt="1rem"
-          bg='brand.150'
+          bg="brand.150"
         >
           <DrawerBody>
-            <Flex direction="column" rowGap={"3rem"} align={"center"} mt="2rem" >
+            <Flex direction="column" rowGap={"3rem"} align={"center"} mt="2rem">
               {menuData.map((menu) => {
                 return (
                   <Box
-                    fontWeight={"600"}
                     key={menu.id}
                     border="none"
                     color={currentMenu === menu.id ? "brand.250" : "brand.100"}
@@ -146,5 +130,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

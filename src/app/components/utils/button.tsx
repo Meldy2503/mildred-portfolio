@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import { Box, Button } from "@chakra-ui/react";
-import { px } from "framer-motion";
-import { ClassNames } from "@emotion/react";
+import { Box } from "@chakra-ui/react";
 
 interface BtnProps {
   href: string;
@@ -13,6 +10,7 @@ interface BtnProps {
   px?: string;
   fontSize?: string;
   ClassName?: string;
+  borderRadius?: string;
 }
 
 export const Btn = ({
@@ -23,30 +21,33 @@ export const Btn = ({
   fontSize,
   ClassName,
   href,
+  borderRadius,
 }: BtnProps) => {
   return (
     <Box
       className={ClassName ?? "pulse"}
       zIndex={100}
+      cursor="pointer"
       textAlign="center"
-      fontSize={fontSize ?? "1.4rem"}
-      fontWeight={"600"}
+      fontSize={fontSize ?? "1.6rem"}
+      fontWeight={500}
       transition={"all .3s ease-in"}
-      borderRadius={"3rem"}
-      py={py ?? "1.3rem"}
+      borderRadius={borderRadius ?? "3rem"}
+      py={py ?? "1.1rem"}
       px={px ?? "3rem"}
       onClick={onClick}
-      bg="brand.250"
-      w='fit-content'
+       bg="brand.550"
+      w="fit-content"
       color="brand.100"
-      textTransform={"uppercase"}
       _hover={{
         textDecoration: "none",
         bg: "brand.250",
       }}
       _active={{ transform: "translateY(1px)" }}
     >
-      <a href={href}>{children}</a>
+      <a href={href} target="_blank">
+        {children}
+      </a>
     </Box>
   );
 };

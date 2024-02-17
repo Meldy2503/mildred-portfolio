@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Button,
   Flex,
   Heading,
   Input,
@@ -11,22 +12,17 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-// import { Title } from "../utils/funcs";
-// import { useToast } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import { send } from "@emailjs/browser";
-// import { Buttn } from "../button";
 import { usePathname } from "next/navigation";
-import { AiTwotoneMail } from "react-icons/ai";
-import { BiMessageDots } from "react-icons/bi";
-import { BsFillPersonFill } from "react-icons/bs";
 import InputElement from "./input-field";
-import { Btn } from "./utils/button";
 import Wrapper from "./utils/wrapper";
+import { contactData } from "./utils/constants";
 
 interface Props {
-  children?: React.ReactNode;
-  px?: string | any;
-  py?: string;
+  // children?: React.ReactNode;
+  // px?: string | any;
+  // py?: string;
   shadow?: string;
   icon?: any;
   placeholder?: string;
@@ -40,30 +36,9 @@ interface UserDetailsProps {
   message: string;
 }
 
-const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
-  const contactData = [
-    {
-      icon: BsFillPersonFill,
-      placeholder: "Full name",
-      type: "text",
-      name: "fullName",
-    },
-    {
-      icon: AiTwotoneMail,
-      placeholder: "Email",
-      type: "email",
-      name: "email",
-    },
-    {
-      icon: BiMessageDots,
-      placeholder: "Message",
-      type: "textarea",
-      name: "message",
-    },
-  ];
-  const { colorMode } = useColorMode();
+const ContactSection = ({ shadow, onClose }: Props) => {
   const path = usePathname();
-  // const toast = useToast();
+  const toast = useToast();
   const [loading, setLoading] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetailsProps>({
     fullName: "",
@@ -95,27 +70,27 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
         process.env.NEXT_PUBLIC_PUBLIC_KEY!
       );
 
-      // toast({
-      //   title: "Success",
-      //   description: "Thanks for reaching out, you will get a response soon.",
-      //   status: "success",
-      //   duration: 5000,
-      //   isClosable: true,
-      //   position: "top-right",
-      // });
+      toast({
+        title: "Success",
+        description: "Thanks for reaching out, you will get a response soon.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top-right",
+      });
 
       if (onClose) {
         onClose();
       }
     } catch (error) {
-      // toast({
-      //   title: "Error",
-      //   description: "Oops!!! Something went wrong, please try again",
-      //   status: "error",
-      //   duration: 5000,
-      //   isClosable: true,
-      //   position: "top-right",
-      // });
+      toast({
+        title: "Error",
+        description: "Oops!!! Something went wrong, please try again",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top-right",
+      });
 
       console.log("FAILED...", error);
     } finally {
@@ -123,7 +98,7 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
       if (!path.includes("pages")) {
         setTimeout(() => {
           window.location.reload();
-        }, 1000); // Reload after 1 second
+        }, 1000);
       }
     }
   };
@@ -136,11 +111,6 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
       [e.target.name]: e.target.value,
     });
   };
-
-  // const inputLeftElementBg = colorMode === "dark" ? "brand.550" : "brand.320";
-
-  const inputLeftElementBgColor =
-    colorMode === "dark" ? "brand.350" : "brand.380";
 
   const [focusIndex, setFocusIndex] = React.useState(null);
 
@@ -158,13 +128,16 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
         direction={{ base: "column", lg: "row" }}
       >
         <Box w={{ base: "100%", lg: "30%" }}>
-          <Heading fontSize={{ base: "4rem", md: "5rem" }}>
+          <Heading
+            fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}
+          >
             I Would Love to Hear from You
           </Heading>
           <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
-          <Text mt="2rem">
+          <Text mt="2rem" color="brand.500">
             I value your feedback and inquiries. Whether you have questions,
-            suggestions, or just want to say hello, i'm here to listen and I look forward to connecting with you.
+            suggestions or just want to say hello, I'm here to listen and I look
+            forward to connecting with you.
           </Text>
         </Box>
 
@@ -198,9 +171,23 @@ const ContactSection = ({ children, px, py, shadow, onClose }: Props) => {
             })}
 
             <Box mt="4rem">
-              <Btn loading={loading} type="submit">
-                send message
-              </Btn>
+              <Button
+                type="submit"
+                className={"pulse"}
+                zIndex={100}
+                textAlign="center"
+                fontSize={"1.55rem"}
+                transition={"all .3s ease-in"}
+                borderRadius={"3rem"}
+                py={"2.2rem"}
+                px={"3rem"}
+                fontWeight={500}
+                isLoading={loading}
+                bg="brand.250"
+                color="brand.100"
+              >
+                Send Message
+              </Button>
             </Box>
           </form>
         </Box>

@@ -1,39 +1,14 @@
 "use Client";
 
-import React from "react";
-import { Box, Text, Flex, Heading, Icon } from "@chakra-ui/react";
-import { TfiWrite } from "react-icons/tfi";
-import { FiEdit } from "react-icons/fi";
-import { RiAdvertisementLine } from "react-icons/ri";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import Wrapper from "./utils/wrapper";
 import star from "./assets/Star7.svg";
 import star2 from "./assets/star5.svg";
+import { serviceData } from "./utils/constants";
+import Wrapper from "./utils/wrapper";
 
 const Services = () => {
-  const data = [
-    {
-      id: "1",
-      icon: <RiAdvertisementLine />,
-      title: "Promotional Ads",
-      text: "Boost your brand with compelling ads that captivate your audience. Our creative solutions ensure maximum visibility and impact, helping your business stand out.",
-    },
-    {
-      id: "2",
-      icon: <FiEdit />,
-      title: "Product Review",
-      text: "We delve into the features and benefits of your products, providing authentic, unique and informative reviews that resonate with your target audience.",
-    },
-    {
-      id: "3",
-      icon: <TfiWrite />,
-      title: "Content Creation",
-      text: "Ignite your online presence with our dynamic services. From engaging articles to visually appealing multimedia contents, we tailor our creations to suit your brand.",
-    },
-  ];
-
   return (
-    // <Flex h={"100vh"} bg="brand.100" align={'center'} justify={'center'} px='4rem'>
     <Wrapper bg="brand.150" id="services">
       <Image
         src={star}
@@ -45,7 +20,6 @@ const Services = () => {
           objectFit: "cover",
           objectPosition: "center",
           width: "30rem",
-          // height: '100%',
           position: "absolute",
           top: "-10rem",
           right: "-10rem",
@@ -61,7 +35,6 @@ const Services = () => {
           objectFit: "cover",
           objectPosition: "center",
           width: "10rem",
-          // height: '100%',
           position: "absolute",
           bottom: "2rem",
           left: "25%",
@@ -75,7 +48,7 @@ const Services = () => {
         rowGap="4rem"
         flexWrap={"wrap"}
       >
-        {data.map((card) => {
+        {serviceData.map((card) => {
           return (
             <Box
               key={card.id}
@@ -86,7 +59,6 @@ const Services = () => {
               color={card.id === "3" ? "brand.150" : "brand.400"}
               transform={card.id === "3" ? "rotate(4deg)" : "rotate(0deg)"}
               mx="auto"
-              // shadow={'lg'}
             >
               <Box>
                 <Box fontSize="7rem" fontWeight={100}>

@@ -8,16 +8,11 @@ import Video from "./assets/author2.webp";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Btn } from "./utils/button";
+import { VideoModal } from "./utils/modal";
+import { videoData } from "./utils/constants";
 
 const WatchVideos = () => {
   const [isMobile] = useMediaQuery("(max-width: 500px)");
-
-  const texts = [
-    "hhhhhhhhhhhh",
-    "hhhhhhhhhhhh",
-    "hhhhhhhhhhhh",
-    "hhhhhhhhhhhh",
-  ];
 
   return (
     <Wrapper id="videos">
@@ -42,20 +37,22 @@ const WatchVideos = () => {
                 margin: "auto",
               }}
             />{" "}
-            <a href="https://www.youtube.com/watch?v=XNjBiqe5RcI&t=8s">
-            <IoPlayCircleOutline
-              style={{
-                position: "absolute",
-                top: "30%",
-                left: "0px",
-                right: "0px",
-                margin: "auto",
-                fontSize: isMobile ? "8rem" : "13rem",
-                color: "#fff",
-                cursor: "pointer",
-              }}
+            <VideoModal
+              triggerBtn={
+                <IoPlayCircleOutline
+                  style={{
+                    position: "absolute",
+                    top: "30%",
+                    left: "0px",
+                    right: "0px",
+                    margin: "auto",
+                    fontSize: isMobile ? "8rem" : "13rem",
+                    color: "#fff",
+                  }}
+                />
+              }
+              src="https://www.youtube.com/embed/XNjBiqe5RcI"
             />
-            </a>
           </Box>
           <Box
             px={{ base: "0rem", md: "1rem" }}
@@ -65,11 +62,11 @@ const WatchVideos = () => {
               Explore Exciting and Funny Contents
             </Heading>
 
-            <Text mt="1.5rem" mb="2rem">
-            Dive into a world of captivating experiences. Immerse yourself in a realm where every moment is a story waiting
-              to be told.
+            <Text mt="1.5rem" mb="2rem"  color='brand.500'>
+              Dive into a world of captivating experiences. Immerse yourself in
+              a realm where every moment is a story waiting to be told.
             </Text>
-            <Btn href='https://www.youtube.com/@mildredken7981'>
+            <Btn href="https://www.youtube.com/@mildredken7981">
               <Flex align={"center"} gap=".5rem">
                 <Text>Watch More</Text>
                 <IoIosArrowRoundForward fontSize={"2.5rem"} />
@@ -85,7 +82,6 @@ const WatchVideos = () => {
           w={{ base: "100%", lg: "30%" }}
         >
           <Box
-            // bg="brand.250"
             bgGradient="linear(to-r, #ff5621 14.03%, #ff2149 65.34%)"
             borderRadius={"1rem"}
             h={{ base: "fit-content", lg: "40%" }}
@@ -94,10 +90,13 @@ const WatchVideos = () => {
             <Heading fontSize={"2.8rem"} fontWeight={"500"}>
               Trending Videos
             </Heading>
-            {texts.map((text, index) => {
+            {videoData.map((item) => {
               return (
-                <Box key={index} my="2rem">
-                  <Text>#. {text}</Text>
+                <Box key={item.id} my="2rem">
+                  <VideoModal
+                    triggerBtn={<Text>{item.text}</Text>}
+                    src={item.href}
+                  />
                 </Box>
               );
             })}
@@ -118,12 +117,14 @@ const WatchVideos = () => {
             <Heading fontSize={"3rem"} fontWeight={"500"} textAlign={"center"}>
               Don't want to miss any updates?
             </Heading>
-            <Text mt="2rem" mb="3rem" textAlign={"center"}>
+            <Text mt="2rem" mb="3rem" textAlign={"center"}  color='brand.350'>
               Stay ahead of the curve with latest updates. Whether it's
               groundbreaking innovations, funny videos or insightful contents, I
               will ensure you're always in the loop.
             </Text>
-            <Btn href='https://www.youtube.com/@mildredken7981'>Subscribe Now</Btn>
+            <Btn href="https://www.youtube.com/@mildredken7981">
+              Subscribe Now
+            </Btn>
           </Flex>
         </Flex>
       </Flex>
