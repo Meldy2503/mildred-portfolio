@@ -122,7 +122,7 @@ const WatchVideos = () => {
               groundbreaking innovations, funny videos or insightful contents, I
               will ensure you're always in the loop.
             </Text>
-            <Btn href="https://www.youtube.com/@mildredken7981">
+            <Btn href="https://www.youtube.com/@mildredken7981" >
               Subscribe Now
             </Btn>
           </Flex>

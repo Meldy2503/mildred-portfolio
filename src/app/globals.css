@@ -43,8 +43,8 @@ a {
   background-repeat: repeat;
   background-image: linear-gradient(
       to bottom,
-      rgb(30, 36, 52, 0.95),
-      rgb(30, 36, 52, 0.95)
+      rgb(30, 36, 52, 0.96),
+      rgb(30, 36, 52, 0.96)
     ),
     url("./components/assets/pattern.png");
 }
@@ -63,7 +63,6 @@ a {
   transform: scale(1.1);
   box-shadow: 0 0 0 3em rgba(255, 255, 255, 0);
   background: linear-gradient(150.31deg, #ff2149 14.03%, #ff5621 65.34%);
-
 }
 
 @keyframes pulse {
@@ -88,7 +87,6 @@ a {
   animation: pulse 1s;
   box-shadow: 0 0 0 1em rgba(255, 255, 255, 0);
   background: linear-gradient(150.31deg, #ff2149 14.03%, #ff5621 65.34%);
-
 }
 
 @keyframes pulse {
@@ -114,6 +112,28 @@ a {
   }
 }
 
+.modalbtn {
+  color: #fff;
+  border: 2px solid #ff2149;
+  background-image: -webkit-linear-gradient(
+    30deg,
+    #ff5621 15.03%,
+    #ff2149 34.34%,
+    transparent 50%
+  );
+  background-image: linear-gradient(
+    150.31deg,
+    #ff5621 15.03%,
+    #ff2149 35.34%,
+    transparent 50%
+  );
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
 .modalbtn:hover {
-  background: #ff2149 
+  background-position: 100%;
+  color: #ff2149;
 }

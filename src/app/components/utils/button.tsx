@@ -36,14 +36,8 @@ export const Btn = ({
       py={py ?? "1.1rem"}
       px={px ?? "3rem"}
       onClick={onClick}
-       bg="brand.550"
       w="fit-content"
       color="brand.100"
-      _hover={{
-        textDecoration: "none",
-        bg: "brand.250",
-      }}
-      _active={{ transform: "translateY(1px)" }}
     >
       <a href={href} target="_blank">
         {children}

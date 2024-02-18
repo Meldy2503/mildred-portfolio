@@ -3,7 +3,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import star from "./assets/Star7.svg";
-import star2 from "./assets/star5.svg";
+import star2 from "./assets/Star2.svg";
 import { serviceData } from "./utils/constants";
 import Wrapper from "./utils/wrapper";
 
@@ -19,9 +19,9 @@ const Services = () => {
           maxWidth: "100%",
           objectFit: "cover",
           objectPosition: "center",
-          width: "30rem",
+          width: "25rem",
           position: "absolute",
-          top: "-10rem",
+          top: "-8rem",
           right: "-10rem",
         }}
       />
@@ -36,7 +36,7 @@ const Services = () => {
           objectPosition: "center",
           width: "10rem",
           position: "absolute",
-          bottom: "2rem",
+          bottom: "1rem",
           left: "25%",
         }}
       />
@@ -52,12 +52,16 @@ const Services = () => {
           return (
             <Box
               key={card.id}
+              zIndex={100}
               border="1px solid #4a4a4a"
               w={{ base: "100%", md: "47%", lg: "31%" }}
               p="4rem 3rem"
               bg={card.id === "3" ? "brand.100" : "brand.150"}
               color={card.id === "3" ? "brand.150" : "brand.400"}
-              transform={card.id === "3" ? "rotate(4deg)" : "rotate(0deg)"}
+              transform={{
+                base: "rotate(0deg)%",
+                md: card.id === "3" ? "rotate(4deg)" : "rotate(0deg)",
+              }}
               mx="auto"
             >
               <Box>

@@ -68,7 +68,7 @@ export const VideoModal = ({ src, triggerBtn }: Props) => {
               href="https://www.youtube.com/@mildredken7981"
               ClassName="modalbtn"
               borderRadius=".5rem"
-              py=".9rem"
+              py=".7rem"
               px="2rem"
             >
               Watch More

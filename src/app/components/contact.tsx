@@ -128,9 +128,7 @@ const ContactSection = ({ shadow, onClose }: Props) => {
         direction={{ base: "column", lg: "row" }}
       >
         <Box w={{ base: "100%", lg: "30%" }}>
-          <Heading
-            fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}
-          >
+          <Heading fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}>
             I Would Love to Hear from You
           </Heading>
           <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
@@ -183,7 +181,7 @@ const ContactSection = ({ shadow, onClose }: Props) => {
                 px={"3rem"}
                 fontWeight={500}
                 isLoading={loading}
-                bg="brand.250"
+                bg="brand.100"
                 color="brand.100"
               >
                 Send Message

@@ -61,7 +61,7 @@ export const serviceData = [
     id: "2",
     icon: <FiEdit />,
     title: "Product Review",
-    text: "We delve into the features and benefits of your products, providing authentic, unique and informative reviews that resonate with your target audience.",
+    text: "We delve into the features and benefits of your products, providing authentic and informative reviews that resonate effectively with your target audience's preferences and needs.",
   },
   {
     id: "3",
