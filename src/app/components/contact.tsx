@@ -9,15 +9,17 @@ import {
   Spinner,
   Text,
   Textarea,
-  useColorMode,
+  useToast
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { useToast } from "@chakra-ui/react";
 import { send } from "@emailjs/browser";
+import {
+  motion
+} from "framer-motion";
 import { usePathname } from "next/navigation";
-import InputElement from "./input-field";
-import Wrapper from "./utils/wrapper";
+import React, { useState } from "react";
+import InputElement from "./utils/input-field";
 import { contactData } from "./utils/constants";
+import Wrapper from "./utils/wrapper";
 
 interface Props {
   // children?: React.ReactNode;
@@ -127,18 +129,24 @@ const ContactSection = ({ shadow, onClose }: Props) => {
         gap="2rem"
         direction={{ base: "column", lg: "row" }}
       >
-        <Box w={{ base: "100%", lg: "30%" }}>
-          <Heading fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}>
-            I Would Love to Hear from You
-          </Heading>
-          <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
-          <Text mt="2rem" color="brand.500">
-            I value your feedback and inquiries. Whether you have questions,
-            suggestions or just want to say hello, I'm here to listen and I look
-            forward to connecting with you.
-          </Text>
-        </Box>
-
+          <Box w={{ base: "100%", lg: "30%" }}>
+        <motion.div
+          initial={{ x: -400, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          viewport={{ once: true }}
+        >
+            <Heading fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}>
+              I Would Love to Hear from You
+            </Heading>
+            <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
+            <Text mt="2rem" color="brand.500">
+              I value your feedback and inquiries. Whether you have questions,
+              suggestions or just want to say hello, I'm here to listen and I
+              look forward to connecting with you.
+            </Text>
+        </motion.div>
+          </Box>
         <Box
           px={{ base: "2rem", lg: "4rem" }}
           py={"4rem"}
@@ -146,6 +154,12 @@ const ContactSection = ({ shadow, onClose }: Props) => {
           bg={"brand.100"}
           transition={"all .5s ease-in"}
           w={{ base: "100%", lg: "65%" }}
+        >
+        <motion.div
+          initial={{ x: 400, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          viewport={{ once: true }}
         >
           <form onSubmit={handleFormSubmit}>
             {contactData.map((item, index) => {
@@ -188,7 +202,9 @@ const ContactSection = ({ shadow, onClose }: Props) => {
               </Button>
             </Box>
           </form>
+        </motion.div>
         </Box>
+
       </Flex>
     </Wrapper>
   );

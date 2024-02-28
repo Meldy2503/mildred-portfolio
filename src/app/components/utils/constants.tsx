@@ -6,8 +6,22 @@ import { RiAdvertisementLine } from "react-icons/ri";
 import { AiTwotoneMail } from "react-icons/ai";
 import { BiMessageDots } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
+import thumb1 from "../assets/thumb1.png";
+import thumb2 from "../assets/thumb2.png";
+import thumb3 from "../assets/thumb3.png";
+import thumb4 from "../assets/thumb4.png";
 
 export const heroData = [
+  {
+    text: "Active users on the platform",
+    subscribersNo: "5000+",
+  },
+  {
+    text: "Users trust our platform",
+    subscribersNo: "1000+",
+  },
+];
+export const aboutData = [
   {
     icon: <FaYoutube />,
     iconColor: "#ff2149",
@@ -74,22 +88,22 @@ export const serviceData = [
 export const videoData = [
   {
     id: "1",
-    text: "#1WhatAfricanMumSees",
+    img: thumb1,
     href: "https://www.youtube.com/embed/o6J3Cuc8nm4",
   },
   {
     id: "2",
-    text: "#2OutsmartAfricanMums",
+    img: thumb2,
     href: "https://www.youtube.com/embed/RQdxw9Tv6AY",
   },
   {
     id: "3",
-    text: "#3MeBeforeCreditAlert",
+    img: thumb3,
     href: "https://www.youtube.com/embed/Sm9HGRj5ZiQ",
   },
   {
     id: "4",
-    text: "#4WhenAngryWithYourMan",
+    img: thumb4,
     href: "https://www.youtube.com/embed/yuvYRvOgHPQ",
   },
 ];

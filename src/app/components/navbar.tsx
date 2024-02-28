@@ -93,13 +93,7 @@ const Navbar = () => {
         </Box>
       </Flex>
       <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
-        <DrawerContent
-          mt="6rem"
-          transition={"all .2s linear"}
-          pb="3rem"
-          pt="1rem"
-          bg="brand.150"
-        >
+        <DrawerContent mt="6rem" pb="3rem" pt="1rem" bg="brand.150">
           <DrawerBody>
             <Flex direction="column" rowGap={"3rem"} align={"center"} mt="2rem">
               {menuData.map((menu) => {
