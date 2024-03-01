@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  useMediaQuery
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, useMediaQuery } from "@chakra-ui/react";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
@@ -19,7 +13,16 @@ const LandingPage = () => {
   const [isMobile] = useMediaQuery("(max-width: 374px)");
 
   return (
-    <Box id="home" pt="8rem" pb="5rem" className="pattern" color="brand.100">
+    <Flex
+      id="home"
+      pt="8rem"
+      pb="5rem"
+      className="pattern"
+      color="brand.100"
+      h={{ base: "100%", xl: "100vh" }}
+      align={"center"}
+      justify={"center"}
+    >
       <Flex
         justify={"space-between"}
         direction={{ base: "column", xl: "row" }}
@@ -167,7 +170,7 @@ const LandingPage = () => {
           </Flex>
         </Flex>
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 

@@ -79,7 +79,8 @@ const Services = () => {
                 zIndex={100}
                 border="1px solid #4a4a4a"
                 w={{ base: "100%", md: "47%", lg: "31%" }}
-                p="4rem 3rem"
+                py="4rem"
+                px={{ base: "2rem", xl: "3rem" }}
                 bg={card.id === "3" ? "brand.100" : "brand.150"}
                 color={card.id === "3" ? "brand.150" : "brand.400"}
                 transition={"all .3s linear"}
