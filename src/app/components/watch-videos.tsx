@@ -163,7 +163,7 @@ const WatchVideos = () => {
                 fontWeight={"500"}
                 textAlign={"center"}
               >
-                Don't want to miss any updates?
+                Don&apos;t  want to miss any updates?
               </Heading>
               <Text
                 my="2rem"
@@ -171,8 +171,8 @@ const WatchVideos = () => {
                 color="brand.350"
                 fontSize={"1.5rem"}
               >
-                Whether it's groundbreaking innovations, funny videos or
-                insightful contents, I will ensure you're always in the loop.
+                Whether it&apos;s groundbreaking innovations, funny videos or
+                insightful contents, I will ensure you&apos;re always in the loop.
               </Text>
               <Btn href="https://www.youtube.com/@mildredken7981">
                 Subscribe Now

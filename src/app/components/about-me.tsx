@@ -74,15 +74,15 @@ const AboutSection = () => {
               </Heading>
 
               <Text pb="2rem" lineHeight={1.7} color="brand.500">
-                Hello, I'm Mildred Ken, a versatile individual who wears many
-                hats with grace and enthusiasm. As a loving mother, my journey
-                is a tapestry of joy, growth, and the beautiful chaos that comes
-                with raising a family. Beyond the role of a mom, I'm is a
-                dynamic social media influencer, leaving an indelible mark on
-                digital platforms. <br /> My online presence is a captivating
-                blend of authenticity and relatability, creating a virtual
-                community where followers feel like cherished friends.I weave
-                storytelling magic into each piece, dedicating myself to
+                Hello, I&apos;m Mildred Ken, a versatile individual who wears
+                many hats with grace and enthusiasm. As a loving mother, my
+                journey is a tapestry of joy, growth, and the beautiful chaos
+                that comes with raising a family. Beyond the role of a mom,
+                I&apos;m a dynamic social media influencer, leaving an indelible
+                mark on digital platforms. <br /> My online presence is a
+                captivating blend of authenticity and relatability, creating a
+                virtual community where followers feel like cherished friends. I
+                weave storytelling magic into each piece, dedicating myself to
                 crafting engaging contents. Join me on this journey of joy,
                 growth, and creativity.
               </Text>

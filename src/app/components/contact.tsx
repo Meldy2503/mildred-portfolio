@@ -142,7 +142,7 @@ const ContactSection = ({ shadow, onClose }: Props) => {
             <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
             <Text mt="2rem" color="brand.500">
               I value your feedback and inquiries. Whether you have questions,
-              suggestions or just want to say hello, I'm here to listen and I
+              suggestions or just want to say hello, I&apos;m here to listen and I
               look forward to connecting with you.
             </Text>
         </motion.div>
