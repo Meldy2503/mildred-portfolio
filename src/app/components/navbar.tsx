@@ -75,6 +75,9 @@ const Navbar = () => {
               <Box
                 key={link.id}
                 color={currentMenu === link.id ? "brand.250" : "brand.100"}
+                _hover={{
+                  color: 'brand.250'
+                }}
                 onClick={() => {
                   handlecurrentMenu(link.id);
                 }}
@@ -101,6 +104,9 @@ const Navbar = () => {
                   <Box
                     key={menu.id}
                     border="none"
+                    _hover={{
+                      color: 'brand.250'
+                    }}
                     color={currentMenu === menu.id ? "brand.250" : "brand.100"}
                   >
                     <Link
