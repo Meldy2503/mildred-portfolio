@@ -3,7 +3,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebookSquare, FaPlay, FaYoutube } from "react-icons/fa";
-import Wrapper from "./utils/wrapper";
+import Wrapper from "../utils/wrapper";
 
 const Footer = () => {
   return (

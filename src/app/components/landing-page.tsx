@@ -5,9 +5,9 @@ import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import bgImage from "./assets/hero-img1.svg";
-import { Btn } from "./utils/button";
-import { heroData } from "./utils/constants";
+import bgImage from "../assets/hero-img1.svg";
+import { Btn } from "../utils/button";
+import { heroData } from "../utils/constants";
 
 const LandingPage = () => {
   const [isMobile] = useMediaQuery("(max-width: 374px)");

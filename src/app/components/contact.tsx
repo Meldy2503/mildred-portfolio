@@ -15,9 +15,9 @@ import { send } from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import InputElement from "./utils/input-field";
-import { contactData } from "./utils/constants";
-import Wrapper from "./utils/wrapper";
+import InputElement from "../utils/input-field";
+import { contactData } from "../utils/constants";
+import Wrapper from "../utils/wrapper";
 
 interface Props {
   shadow?: string;

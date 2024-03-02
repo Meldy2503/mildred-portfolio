@@ -2,7 +2,7 @@
 
 import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { Btn } from "./utils/button";
+import { Btn } from "../utils/button";
 
 const DiscoverMore = () => {
   return (
@@ -21,7 +21,7 @@ const DiscoverMore = () => {
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: .8, ease: "easeInOut" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
         >
           <Heading

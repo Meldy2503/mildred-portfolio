@@ -1,10 +1,10 @@
 "use client";
 
 import { CacheProvider } from "@chakra-ui/next-js";
-import theme from "./components/utils/theme";
+import theme from "./utils/theme";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import LoadingIcon from "./components/utils/loader";
+import LoadingIcon from "./utils/loader";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Providers({ children }: { children: React.ReactNode }) {

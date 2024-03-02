@@ -2,14 +2,14 @@
 
 import { Box, Flex, Heading, Text, useMediaQuery } from "@chakra-ui/react";
 import React from "react";
-import Wrapper from "./utils/wrapper";
+import Wrapper from "../utils/wrapper";
 import Image from "next/image";
-import Video from "./assets/author2.webp";
+import Video from "../assets/author2.webp";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { Btn } from "./utils/button";
-import { VideoModal } from "./utils/modal";
-import { videoData } from "./utils/constants";
+import { Btn } from "../utils/button";
+import { VideoModal } from "../utils/modal";
+import { videoData } from "../utils/constants";
 import { motion } from "framer-motion";
 
 const WatchVideos = () => {
@@ -163,7 +163,7 @@ const WatchVideos = () => {
                 fontWeight={"500"}
                 textAlign={"center"}
               >
-                Don&apos;t  want to miss any updates?
+                Don&apos;t want to miss any updates?
               </Heading>
               <Text
                 my="2rem"
@@ -172,7 +172,8 @@ const WatchVideos = () => {
                 fontSize={"1.5rem"}
               >
                 Whether it&apos;s groundbreaking innovations, funny videos or
-                insightful contents, I will ensure you&apos;re always in the loop.
+                insightful contents, I will ensure you&apos;re always in the
+                loop.
               </Text>
               <Btn href="https://www.youtube.com/@mildredken7981">
                 Subscribe Now

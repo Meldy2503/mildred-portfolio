@@ -17,7 +17,7 @@ import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { menuData } from "./utils/constants";
+import { menuData } from "../utils/constants";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -76,7 +76,7 @@ const Navbar = () => {
                 key={link.id}
                 color={currentMenu === link.id ? "brand.250" : "brand.100"}
                 _hover={{
-                  color: 'brand.250'
+                  color: "brand.250",
                 }}
                 onClick={() => {
                   handlecurrentMenu(link.id);
@@ -105,7 +105,7 @@ const Navbar = () => {
                     key={menu.id}
                     border="none"
                     _hover={{
-                      color: 'brand.250'
+                      color: "brand.250",
                     }}
                     color={currentMenu === menu.id ? "brand.250" : "brand.100"}
                   >

@@ -3,12 +3,11 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import arthurImage from "./assets/authur-img.webp";
-import Card from "./utils/card";
-import Wrapper from "./utils/wrapper";
+import arthurImage from "../assets/authur-img.webp";
+import Card from "../utils/card";
+import Wrapper from "../utils/wrapper";
 
 const AboutSection = () => {
-
   return (
     <Wrapper id="about" bg="brand.300">
       <Flex

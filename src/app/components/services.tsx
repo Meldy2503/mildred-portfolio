@@ -3,10 +3,10 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import star2 from "./assets/Star2.svg";
-import star from "./assets/Star7.svg";
-import { serviceData } from "./utils/constants";
-import Wrapper from "./utils/wrapper";
+import star2 from "../assets/Star2.svg";
+import star from "../assets/Star7.svg";
+import { serviceData } from "../utils/constants";
+import Wrapper from "../utils/wrapper";
 
 const Services = () => {
   return (
