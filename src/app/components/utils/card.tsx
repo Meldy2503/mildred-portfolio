@@ -6,6 +6,7 @@ import { Btn } from "./button";
 import { aboutData } from "./constants";
 const Card = () => {
   const [isMobile] = useMediaQuery("(max-width: 374px)");
+  const [isTablet] = useMediaQuery("(max-width: 768px)");
 
   return (
     <Flex
@@ -16,7 +17,11 @@ const Card = () => {
       {aboutData.map((item, index) => {
         return (
           <motion.div
-            initial={{ x: index === 1 ? 400 : -400, opacity: 0 }}
+            initial={{
+              x: index === 1 ? 200 : -200,
+              opacity: 0,
+            }}
+          
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}

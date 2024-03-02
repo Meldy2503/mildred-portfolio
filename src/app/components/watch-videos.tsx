@@ -25,7 +25,7 @@ const WatchVideos = () => {
           w={{ base: "100%", lg: "60%" }}
         >
           <motion.div
-            initial={{ x: -400, opacity: 0 }}
+            initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
@@ -93,7 +93,7 @@ const WatchVideos = () => {
           w={{ base: "100%", lg: "35%" }}
         >
           <motion.div
-            initial={{ x: 400, opacity: 0 }}
+            initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}

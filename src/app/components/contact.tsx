@@ -9,12 +9,10 @@ import {
   Spinner,
   Text,
   Textarea,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 import { send } from "@emailjs/browser";
-import {
-  motion
-} from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import InputElement from "./utils/input-field";
@@ -22,9 +20,6 @@ import { contactData } from "./utils/constants";
 import Wrapper from "./utils/wrapper";
 
 interface Props {
-  // children?: React.ReactNode;
-  // px?: string | any;
-  // py?: string;
   shadow?: string;
   icon?: any;
   placeholder?: string;
@@ -129,24 +124,24 @@ const ContactSection = ({ shadow, onClose }: Props) => {
         gap="2rem"
         direction={{ base: "column", lg: "row" }}
       >
-          <Box w={{ base: "100%", lg: "30%" }}>
-        <motion.div
-          initial={{ x: -400, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          viewport={{ once: true }}
-        >
+        <Box w={{ base: "100%", lg: "30%" }}>
+          <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: true }}
+          >
             <Heading fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}>
               I Would Love to Hear from You
             </Heading>
             <Box h=".5rem" bg="brand.250" borderRadius={"1rem"} mt="1rem" />
             <Text mt="2rem" color="brand.500">
               I value your feedback and inquiries. Whether you have questions,
-              suggestions or just want to say hello, I&apos;m here to listen and I
-              look forward to connecting with you.
+              suggestions or just want to say hello, I&apos;m here to listen and
+              I look forward to connecting with you.
             </Text>
-        </motion.div>
-          </Box>
+          </motion.div>
+        </Box>
         <Box
           px={{ base: "2rem", lg: "4rem" }}
           py={"4rem"}
@@ -155,56 +150,55 @@ const ContactSection = ({ shadow, onClose }: Props) => {
           transition={"all .5s ease-in"}
           w={{ base: "100%", lg: "65%" }}
         >
-        <motion.div
-          initial={{ x: 400, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          viewport={{ once: true }}
-        >
-          <form onSubmit={handleFormSubmit}>
-            {contactData.map((item, index) => {
-              return (
-                <InputElement
-                  key={index}
-                  icon={item.icon}
-                  type={item.type}
-                  name={item.name}
-                  onChange={handleInputChange}
-                  as={item.type === "textarea" ? Textarea : Input}
-                  h={item.type === "textarea" ? "13rem" : ""}
-                  py={item.type === "textarea" ? "1.5rem" : "2.5rem"}
-                  mt={item.type === "textarea" ? "-8rem" : ""}
-                  placeholder={item.placeholder}
-                  bg={focusIndex === index ? "brand.250" : "brand.300"}
-                  color={focusIndex === index ? "brand.100" : "brand.150"}
-                  onClick={() => handleFocusColor(index)}
-                />
-              );
-            })}
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: true }}
+          >
+            <form onSubmit={handleFormSubmit}>
+              {contactData.map((item, index) => {
+                return (
+                  <InputElement
+                    key={index}
+                    icon={item.icon}
+                    type={item.type}
+                    name={item.name}
+                    onChange={handleInputChange}
+                    as={item.type === "textarea" ? Textarea : Input}
+                    h={item.type === "textarea" ? "13rem" : ""}
+                    py={item.type === "textarea" ? "1.5rem" : "2.5rem"}
+                    mt={item.type === "textarea" ? "-8rem" : ""}
+                    placeholder={item.placeholder}
+                    bg={focusIndex === index ? "brand.250" : "brand.300"}
+                    color={focusIndex === index ? "brand.100" : "brand.150"}
+                    onClick={() => handleFocusColor(index)}
+                  />
+                );
+              })}
 
-            <Box mt="4rem">
-              <Button
-                type="submit"
-                className={"pulse"}
-                zIndex={100}
-                textAlign="center"
-                fontSize={"1.55rem"}
-                transition={"all .3s ease-in"}
-                borderRadius={"3rem"}
-                py={"2.2rem"}
-                px={"3rem"}
-                fontWeight={500}
-                isLoading={loading}
-                bg="brand.100"
-                color="brand.100"
-              >
-                Send Message
-              </Button>
-            </Box>
-          </form>
-        </motion.div>
+              <Box mt="4rem">
+                <Button
+                  type="submit"
+                  className={"pulse"}
+                  zIndex={100}
+                  textAlign="center"
+                  fontSize={"1.55rem"}
+                  transition={"all .3s ease-in"}
+                  borderRadius={"3rem"}
+                  py={"2.2rem"}
+                  px={"3rem"}
+                  fontWeight={500}
+                  isLoading={loading}
+                  bg="brand.100"
+                  color="brand.100"
+                >
+                  Send Message
+                </Button>
+              </Box>
+            </form>
+          </motion.div>
         </Box>
-
       </Flex>
     </Wrapper>
   );

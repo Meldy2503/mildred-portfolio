@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Heading, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import arthurImage from "./assets/authur-img.webp";
@@ -8,7 +8,6 @@ import Card from "./utils/card";
 import Wrapper from "./utils/wrapper";
 
 const AboutSection = () => {
-  const [isMobile] = useMediaQuery("(max-width: 374px)");
 
   return (
     <Wrapper id="about" bg="brand.300">

@@ -1,31 +1,14 @@
 "use client";
 
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 import star2 from "./assets/Star2.svg";
 import star from "./assets/Star7.svg";
 import { serviceData } from "./utils/constants";
 import Wrapper from "./utils/wrapper";
 
 const Services = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const cardVariants: Variants = {
-    offscreen: {
-      y: 0,
-    },
-    onscreen: {
-      y: 50,
-      rotate: -5,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-      },
-    },
-  };
   return (
     <Wrapper bg="brand.150" id="services">
       <Image
@@ -58,10 +41,11 @@ const Services = () => {
           left: "25%",
         }}
       />
+
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
+        initial={{ y: 200, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         viewport={{ once: true }}
       >
         <Flex
@@ -72,10 +56,10 @@ const Services = () => {
           rowGap="4rem"
           flexWrap={"wrap"}
         >
-          {serviceData.map((card) => {
+          {serviceData.map((card, index) => {
             return (
-              <Box
-                key={card.id}
+              <Flex
+                key={index}
                 zIndex={100}
                 border="1px solid #4a4a4a"
                 w={{ base: "100%", md: "47%", lg: "31%" }}
@@ -99,7 +83,7 @@ const Services = () => {
                   </Heading>
                   <Text>{card.text}</Text>
                 </Box>
-              </Box>
+              </Flex>
             );
           })}
         </Flex>
