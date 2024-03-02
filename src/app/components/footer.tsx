@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, HStack, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebookSquare, FaPlay, FaYoutube } from "react-icons/fa";
 import Wrapper from "./utils/wrapper";
@@ -11,10 +11,7 @@ const Footer = () => {
       <Flex
         color="brand.400"
         py="4rem"
-        // justify="space-between"
-        // flexWrap={"wrap"}
         gap="5rem"
-        // rowGap="5rem"
         mx={"auto"}
         align={{ base: "center", md: "flex-start" }}
         justify={{ base: "center", md: "space-between" }}
