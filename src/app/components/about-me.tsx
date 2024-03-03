@@ -4,12 +4,45 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import arthurImage from "../assets/authur-img.webp";
-import Card from "../utils/card";
 import Wrapper from "../utils/wrapper";
+import star1 from "../assets/Star2.svg";
+import star from "../assets/Star2.svg";
 
 const AboutSection = () => {
   return (
     <Wrapper id="about" bg="brand.300">
+      <Image
+        src={star}
+        alt="star image"
+        height={800}
+        width={800}
+        style={{
+          maxWidth: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          width: "8rem",
+          position: "absolute",
+          top: "2rem",
+          left: "45%",
+          opacity: 0.3,
+        }}
+      />
+      <Image
+        src={star1}
+        alt="star image"
+        height={800}
+        width={800}
+        style={{
+          maxWidth: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          width: "8rem",
+          position: "absolute",
+          bottom: "0",
+          left: "0",
+          opacity: 0.3,
+        }}
+      />
       <Flex
         justify={"space-between"}
         align={"center"}
@@ -20,7 +53,7 @@ const AboutSection = () => {
           justify={"space-between"}
           align={"center"}
           gap="5rem"
-          direction={{ base: "column", md: "row" }}
+          direction={{ base: "column", md: "row-reverse" }}
         >
           <Box
             w={{ base: "100%", md: "45%" }}
@@ -30,7 +63,7 @@ const AboutSection = () => {
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               viewport={{ once: true }}
             >
               <Image
@@ -52,7 +85,7 @@ const AboutSection = () => {
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               viewport={{ once: true }}
             >
               <Text
@@ -87,7 +120,6 @@ const AboutSection = () => {
             </motion.div>
           </Box>
         </Flex>
-        <Card />
       </Flex>
     </Wrapper>
   );

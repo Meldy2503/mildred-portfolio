@@ -45,7 +45,7 @@ const Services = () => {
       <motion.div
         initial={{ y: 200, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
         viewport={{ once: true }}
       >
         <Flex

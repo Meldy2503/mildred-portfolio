@@ -128,7 +128,7 @@ const ContactSection = ({ shadow, onClose }: Props) => {
           <motion.div
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
             viewport={{ once: true }}
           >
             <Heading fontSize={{ base: "3.5rem", md: "4.5rem", lg: "5rem" }}>
@@ -153,7 +153,7 @@ const ContactSection = ({ shadow, onClose }: Props) => {
           <motion.div
             initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
             viewport={{ once: true }}
           >
             <form onSubmit={handleFormSubmit}>

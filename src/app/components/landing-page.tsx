@@ -1,17 +1,12 @@
 "use client";
 
-import { Box, Flex, Heading, Text, useMediaQuery } from "@chakra-ui/react";
-import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import bgImage from "../assets/hero-img1.svg";
 import { Btn } from "../utils/button";
-import { heroData } from "../utils/constants";
+import CanvasComponent from "../utils/canvas";
+import Card from "../utils/card";
 
 const LandingPage = () => {
-  const [isMobile] = useMediaQuery("(max-width: 374px)");
-
   return (
     <Flex
       id="home"
@@ -22,6 +17,7 @@ const LandingPage = () => {
       h={{ base: "100%", xl: "100vh" }}
       align={"center"}
       justify={"center"}
+      position={"relative"}
     >
       <Flex
         justify={"space-between"}
@@ -41,7 +37,7 @@ const LandingPage = () => {
           textAlign={{ base: "center", xl: "left" }}
         >
           <motion.div
-            initial={{ x: -800 }}
+            initial={{ x: -600 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
@@ -85,89 +81,9 @@ const LandingPage = () => {
           direction={{ base: "column", md: "row" }}
           align={{ base: "center", xl: "flex-start" }}
         >
-          <Flex
-            w={{ base: "100%", xl: "60%" }}
-            mt={{ base: "2rem", xl: "5rem" }}
-            h="50rem"
-            position={"relative"}
-            align={"center"}
-            justify={"center"}
-          >
-            <Canvas>
-              <OrbitControls enableZoom={false} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.5}>
-                <MeshDistortMaterial
-                  distort={0.5}
-                  speed={2}
-                  color={"#ff5621"}
-                />
-              </Sphere>
-            </Canvas>
-            <Box position={"absolute"} top="2rem" mx="auto">
-              <Image
-                src={bgImage}
-                alt="youtube photo"
-                width={800}
-                height={800}
-                style={{
-                  width: "35rem",
-                  maxWidth: "100%",
-                  objectFit: "cover",
-                }}
-              />
-            </Box>
-          </Flex>
-          <Flex
-            w={{ base: "100%", xl: "40%" }}
-            direction={"column"}
-            gap="2rem"
-            mt={{ base: "0rem", xl: "11rem" }}
-            color="brand.150"
-            px={{ base: "1rem", sm: "2rem", xl: "0" }}
-          >
-            {heroData.map((item, index) => {
-              return (
-                <motion.div
-                  initial={{ x: 800 }}
-                  animate={{ x: 0 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                  key={index}
-                >
-                  <Flex
-                    bg="brand.350"
-                    p="2rem"
-                    gap="1rem"
-                    shadow={"xl"}
-                    borderRadius={"1rem"}
-                    justify={"center"}
-                    alignItems={"center"}
-                    direction={isMobile ? "column" : "row"}
-                    align="center"
-                  >
-                    <Heading
-                      fontStyle={"300"}
-                      fontSize={"4rem"}
-                      fontWeight={700}
-                      color="brand.450"
-                      textAlign={"center"}
-                      letterSpacing={".2rem"}
-                    >
-                      {item.subscribersNo}
-                    </Heading>
-                    <Box
-                      width=".1rem"
-                      bg="brand.200"
-                      mx={isMobile ? "0rem" : "1rem"}
-                      h={isMobile ? "0rem" : "5rem"}
-                    />
-                    <Text fontSize={"1.45rem"}>{item.text}</Text>
-                  </Flex>
-                </motion.div>
-              );
-            })}
-          </Flex>
+          <CanvasComponent />
+
+          <Card />
         </Flex>
       </Flex>
     </Flex>

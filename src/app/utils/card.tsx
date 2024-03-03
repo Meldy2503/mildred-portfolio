@@ -10,27 +10,27 @@ const Card = () => {
 
   return (
     <Flex
-      direction={{ base: "column", md: "row" }}
-      gap="3rem"
+    direction={"column"}
+    w={{ base: "100%", xl: "40%" }}
+    mt={{ base: "0rem", xl: "10rem" }}
+    px={{ base: "1rem", sm: "2rem", xl: "0" }}
+
+
+    gap="2rem"
       color="brand.150"
     >
       {aboutData.map((item, index) => {
         return (
           <motion.div
-            initial={{
-              x: index === 1 ? 200 : -200,
-              opacity: 0,
-            }}
-          
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            viewport={{ once: true }}
-            key={index}
+          initial={{ x: 600 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          key={index}
           >
             <Flex
               bg="brand.100"
-              py="2rem"
-              px={{ base: "1rem", lg: "3rem" }}
+              py="1.5rem"
+              px={{ base: "1rem", lg: "1rem" }}
               gap={isMobile ? "1rem" : ".5rem"}
               justify={"space-between"}
               borderRadius={"1rem"}
@@ -88,7 +88,8 @@ const Card = () => {
                   <br />
                   {item.subText}
                 </Heading>
-                <Btn href={item.href} fontSize="1.35rem" py=".75rem" px="2rem">
+                <Btn href={item.href} fontSize="1.35rem" py=".5rem" px="2rem" 
+>
                   {item.btnText}
                 </Btn>
               </Box>
